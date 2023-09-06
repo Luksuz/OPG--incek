@@ -4,6 +4,7 @@ import './index.css';
 import ONama from './ONama';
 import Home from './Home';
 import Ponuda from './Ponuda';
+import anime from "animejs";
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 
 

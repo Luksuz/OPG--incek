@@ -3,14 +3,10 @@ import { useNavigate } from "react-router-dom";
 export default function Navbar() {
   const navigate = useNavigate();
 
-  const handleOnScroll = () => {
-    if (window.scrollY > 0) {
-      console.log("scrolled");
-    }
-  };
+
 
   return (
-    <nav className="navbar shadow mb-4 sticky-top" onScroll={handleOnScroll}>
+    <nav className="navbar shadow mb-4 sticky-top">
       <div class="container-fluid">
         <div>
           <a class="navbar-brand fs-1">OPG Šincek</a>
@@ -22,6 +18,7 @@ export default function Navbar() {
                 class="nav-link"
                 aria-current="page"
                 onClick={() => navigate("/ONama")}
+                href="#"
               >
                 O nama
               </a>
@@ -32,7 +29,7 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a class="nav-link" onClick={() => navigate("/Ponuda")}>
+              <a class="nav-link" onClick={() => navigate("/Ponuda")} href="#">
                 Ponuda
               </a>
             </li>
