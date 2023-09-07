@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom";
 export default function Navbar() {
   const navigate = useNavigate();
 
+  function handleHomeNavigation() {
+    navigate("/");
+  }
+
 
 
   return (
-    <nav className="navbar shadow mb-4 sticky-top">
+    <nav className="navbar shadow sticky-top">
       <div class="container-fluid">
         <div>
-          <a class="navbar-brand fs-1">OPG Šincek</a>
+          <a class="navbar-brand fs-1" onClick={handleHomeNavigation}>OPG Šincek</a>
         </div>
         <div class="d-flex align-items-center">
           <ul class="nav">

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
 import ONama from './ONama';
 import Home from './Home';
 import Ponuda from './Ponuda';
-import anime from "animejs";
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 
 
