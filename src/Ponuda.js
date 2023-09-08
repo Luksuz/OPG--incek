@@ -7,11 +7,15 @@ import { motion } from "framer-motion";
 export default function Ponuda() {
   const mappedPlantData = plantData.map((plant, index) => {
     return (
-      <div
+      <motion.div
         className="col-6 col-lg-4 mb-2"
-        initial={{ width: 0 }}
-        animate={{ width: "100%", transition: { duration: 0.3 } }}
-        exit={{ x: window.innerWidth }}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.5, delay: 1.5 },
+        }}
+        exit={{ opacity: 0, transition: { duration: 0.2 } }}
         key={index}
       >
         <PlantCard
@@ -20,25 +24,25 @@ export default function Ponuda() {
           price={plant.price}
           description={plant.description}
         />
-      </div>
+      </motion.div>
     );
   });
 
   return (
-    <motion.div>
+    <div>
       <Navbar />
-      <div
+      <motion.div
         className="container d-flex justify-content-center"
-        initial={{ width: 0 }}
-        animate={{ width: "100%", transition: { duration: 0.3 } }}
-        exit={{ x: window.innerWidth }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 1 } }}
+        exit={{ opacity: 0, transition: { duration: 0.2 } }}
       >
         <div className="row">
           <h1>Ponuda</h1>
           <hr />
           {mappedPlantData}
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
