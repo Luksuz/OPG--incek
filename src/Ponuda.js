@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import PlantCard from "./components/plantCard";
 import plantData from "./plantsInfo";
-import { motion } from "framer-motion";
 import PageTransition from "./components/animationComponents/PageTransition";
 
 export default function Ponuda() {

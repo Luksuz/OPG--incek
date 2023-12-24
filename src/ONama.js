@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar";
-import { motion } from "framer-motion";
 import PageTransition from "./components/animationComponents/PageTransition";
 import SideSequence from "./components/animationComponents/SideSequence";
 
