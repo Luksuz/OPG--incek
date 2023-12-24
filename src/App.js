@@ -1,6 +1,6 @@
 import React from "react";
 import "./app.css";
-import AnimatedRoutes from "./components/AnimatedRoutes";
+import AnimatedRoutes from "./components/animationComponents/AnimatedRoutes";
 import { BrowserRouter } from "react-router-dom";
 
 export default function App() {

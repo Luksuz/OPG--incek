@@ -1,22 +1,16 @@
 import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
+import PageTransition from "./components/animationComponents/PageTransition";
+import SideSequence from "./components/animationComponents/SideSequence";
 
 export default function ONama() {
   return (
     <div>
       <Navbar />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5 } }}
-        exit={{ opacity: 0, transition: { duration: 1 } }}
-      >
+      <PageTransition>
         <hr />
         <div className="container">
-          <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.5 } }}
-          exit={{ opacity: 0, x: -100, transition: { duration: 0.2 } }}
-          >
+          <SideSequence delay={0.5}>
             <h2>
               OPG Šincek - Uzgoj Odojaka, Svinja i Proizvodnja Žitarica, Grožđa
               i Bučinog Ulja
@@ -29,12 +23,8 @@ export default function ONama() {
               kvalitete naših proizvoda i pružanju najbolje skrbi za naše
               životinje.
             </p>
-          </motion.div>
-          <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.7 } }}
-          exit={{ opacity: 0, x: -100, transition: { duration: 0.2, delay: 0.2 } }}
-          >
+          </SideSequence>
+          <SideSequence delay={0.7}>
             <h3>Uzgoj Odojaka i Svinja</h3>
             <p>
               Naša primarna djelatnost je uzgoj odojaka i svinja-tovljenika.
@@ -45,12 +35,8 @@ export default function ONama() {
               rezultirali mesom visoke nutritivne vrijednosti i izvanrednog
               okusa.
             </p>
-          </motion.div>
-          <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.9 } }}
-          exit={{ opacity: 0, x: -100, transition: { duration: 0.2, delay: 0.4 } }}
-          >
+          </SideSequence>
+          <SideSequence delay={0.9}>
             <h3>Proizvodnja Žitarica, Grožđa i Bučinog Ulja</h3>
             <p>
               Uzgoj odojaka i svinja samo je jedan dio naše raznovrsne
@@ -61,12 +47,8 @@ export default function ONama() {
               proizvoditi visokokvalitetne proizvode koji će zadovoljiti potrebe
               naših kupaca i pridonijeti zdravoj prehrani.
             </p>
-          </motion.div>
-          <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 1.1 } }}
-          exit={{ opacity: 0, x: -100, transition: { duration: 0.2, delay: 0.6 } }}
-          >
+          </SideSequence>
+          <SideSequence delay={1.1}>
             <h3>Članovi PDV-a od 2003. godine</h3>
             <p>
               Ponosno smo članovi sustava PDV-a od 2003. godine, što potvrđuje
@@ -74,21 +56,17 @@ export default function ONama() {
               pratimo i prilagođavamo se zakonodavnim promjenama kako bismo
               osigurali usklađenost sa svim poreznim i regulatornim zahtjevima.
             </p>
-          </motion.div>
-          <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 1.3 } }}
-          exit={{ opacity: 0, x: -100, transition: { duration: 0.2, delay: 0.8 } }}
-          >
+          </SideSequence>
+          <SideSequence delay={1.3}>
             <p>
               Zahvaljujemo na podršci i povjerenju koje nam pružate već dugi niz
               godina. S veseljem radimo na očuvanju visokih standarda kvalitete
               i raznolikosti naše ponude. Ako imate bilo kakva pitanja ili
               trebate dodatne informacije, slobodno nas kontaktirajte.
             </p>
-          </motion.div>
+          </SideSequence>
         </div>
-      </motion.div>
+      </PageTransition>
     </div>
   );
 }
