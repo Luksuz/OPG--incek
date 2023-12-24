@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -7,20 +8,19 @@ export default function Navbar() {
     <nav className="navbar shadow sticky-top">
       <div className="container-fluid">
         <div>
-          <a
-            className="navbar-brand fs-1"
+          <Button
+            className="navbar-brand fs-1 bg-transparent"
             onClick={() => {
               navigate("/");
             }}
-            href="/"
           >
             OPG Šincek
-          </a>
+          </Button>
         </div>
         <div className="d-flex align-items-center">
           <ul className="nav">
             <li>
-              <a
+              <Button
                 className="nav-link"
                 aria-current="page"
                 onClick={() => navigate("/ONama")}
@@ -28,27 +28,24 @@ export default function Navbar() {
                 href="#"
               >
                 O nama
-              </a>
+              </Button>
             </li>
             <li>
-              <a
+              <Button
                 className="nav-link"
                 onClick={() => navigate("/Kontakt")}
-                //eslint-disable-next-line
-                href="#"
+
               >
                 Kontakt
-              </a>
+              </Button>
             </li>
             <li>
-              <a
+              <Button
                 className="nav-link"
                 onClick={() => navigate("/Ponuda")}
-                //eslint-disable-next-line
-                href="#"
               >
                 Ponuda
-              </a>
+              </Button>
             </li>
           </ul>
         </div>
