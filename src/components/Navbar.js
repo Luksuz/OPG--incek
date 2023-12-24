@@ -7,7 +7,15 @@ export default function Navbar() {
     <nav className="navbar shadow sticky-top">
       <div className="container-fluid">
         <div>
-          <a className="navbar-brand fs-1" onClick={() => {navigate("/")}} href="/">OPG Šincek</a>
+          <a
+            className="navbar-brand fs-1"
+            onClick={() => {
+              navigate("/");
+            }}
+            href="/"
+          >
+            OPG Šincek
+          </a>
         </div>
         <div className="d-flex align-items-center">
           <ul className="nav">
@@ -16,19 +24,29 @@ export default function Navbar() {
                 className="nav-link"
                 aria-current="page"
                 onClick={() => navigate("/ONama")}
-                href="/ONama"
+                //eslint-disable-next-line
+                href="#"
               >
                 O nama
               </a>
             </li>
             <li>
-              <a className="nav-link" onClick={() => navigate("/Kontakt")} href="/Kontakt">
+              <a
+                className="nav-link"
+                onClick={() => navigate("/Kontakt")}
+                //eslint-disable-next-line
+                href="#"
+              >
                 Kontakt
               </a>
             </li>
             <li>
-
-              <a className="nav-link" onClick={() => navigate("/Ponuda")} href="/Ponuda">
+              <a
+                className="nav-link"
+                onClick={() => navigate("/Ponuda")}
+                //eslint-disable-next-line
+                href="#"
+              >
                 Ponuda
               </a>
             </li>
