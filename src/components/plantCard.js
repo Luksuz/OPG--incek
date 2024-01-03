@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, Row, Col, InputGroup } from "react-bootstrap";
 import { motion } from "framer-motion";
+import "../styles.css"
 
 export default function PlantCard({ imageUrl, name, price, description }) {
   const [show, setShow] = useState(false);
@@ -50,33 +51,30 @@ export default function PlantCard({ imageUrl, name, price, description }) {
       </div>
 
       {/* Modal */}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{name + " - narudžba"}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="d-flex flex-column ">
-            <div className="row justify-content-center align-items-center">
-              <img src={imageUrl} alt={name} className="img-fluid w-75" />
+      <Modal show={show} onHide={handleClose} className="modal-xl">
+
+        <Modal.Body className="p-0">
+          <div className="d-flex flex-row flex-md-col">
+            <div className="row justify-content-center align-items-center me-3">
+              <img src={imageUrl} alt={name} className="img-fluid" />
             </div>
-            <div className="">{description}</div>
+            <div className="mt-4">
+            <h5 className="card-title">{name}</h5>
+              {description}
             <hr />
             <div className="d-flex">
               <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row className="mb-3">
-                  <Form.Group as={Col} md="4" controlId="validationCustom01">
-                    <Form.Label>First name</Form.Label>
+                  <Form.Group className="d-flex flex-column w-100" as={Col} md="4" controlId="validationCustom01">
+                    <Form.Label >First name</Form.Label>
                     <Form.Control
                       required
                       type="text"
                       placeholder="First name"
                       defaultValue="Mark"
                     />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                  </Form.Group>
-                  <Form.Group as={Col} md="4" controlId="validationCustom02">
-                    <Form.Label>Last name</Form.Label>
-                    <Form.Control
+                     <Form.Label>Last name</Form.Label>
+                     <Form.Control
                       required
                       type="text"
                       placeholder="Last name"
@@ -84,44 +82,46 @@ export default function PlantCard({ imageUrl, name, price, description }) {
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                   </Form.Group>
-                  <Form.Group
-                    as={Col}
-                    md="4"
-                    controlId="validationCustomUsername"
-                  >
-                    <Form.Label>Username</Form.Label>
-                    <InputGroup hasValidation>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        @
-                      </InputGroup.Text>
-                      <Form.Control
-                        type="text"
-                        placeholder="Username"
-                        aria-describedby="inputGroupPrepend"
-                        required
-                      />
-                      <Form.Control.Feedback type="invalid">
-                        Please choose a username.
-                      </Form.Control.Feedback>
-                    </InputGroup>
+                 
+                  
+                </Row>
+
+                <Row className="mb-3 d-flex justify-content-between">
+                  <Form.Group as={Col} md="8" controlId="validationCustom03" className="w-50">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="text" placeholder="Email" required />
+                    <Form.Control.Feedback type="invalid">
+                      Your email adress
+                    </Form.Control.Feedback>
+                  </Form.Group>
+
+                  <Form.Group as={Col} md="8" controlId="validationCustom03" className="w-50">
+                    <Form.Label>Phone number</Form.Label>
+                    <Form.Control type="text" placeholder="Phone number" required />
+                    <Form.Control.Feedback type="invalid">
+                      Your phone number
+                    </Form.Control.Feedback>
                   </Form.Group>
                 </Row>
-                <Row className="mb-3">
-                  <Form.Group as={Col} md="6" controlId="validationCustom03">
+
+
+
+                <Row className="mb-3 d-flex justify-content-between">
+                  <Form.Group as={Col} md="8" controlId="validationCustom03" className="w-25">
                     <Form.Label>City</Form.Label>
                     <Form.Control type="text" placeholder="City" required />
                     <Form.Control.Feedback type="invalid">
                       Please provide a valid city.
                     </Form.Control.Feedback>
                   </Form.Group>
-                  <Form.Group as={Col} md="3" controlId="validationCustom04">
+                  <Form.Group as={Col} md="8" controlId="validationCustom04" className="w-25">
                     <Form.Label>State</Form.Label>
                     <Form.Control type="text" placeholder="State" required />
                     <Form.Control.Feedback type="invalid">
                       Please provide a valid state.
                     </Form.Control.Feedback>
                   </Form.Group>
-                  <Form.Group as={Col} md="3" controlId="validationCustom05">
+                  <Form.Group as={Col} md="8" controlId="validationCustom05" className="w-25">
                     <Form.Label>Zip</Form.Label>
                     <Form.Control type="text" placeholder="Zip" required />
                     <Form.Control.Feedback type="invalid">
@@ -129,6 +129,23 @@ export default function PlantCard({ imageUrl, name, price, description }) {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Row>
+
+
+                
+
+                <hr></hr>
+
+                <Row className="mb-3 d-flex justify-content-between">
+                  <Form.Group as={Col} md="8" controlId="validationCustom03" className="w-50">
+                    <Form.Label>Quantity</Form.Label>
+                    <Form.Control type="text" placeholder="Quantity" required />
+                    <Form.Control.Feedback type="invalid">
+                      Quantity
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Row>
+
+
                 <Form.Group className="mb-3">
                   <Form.Check
                     required
@@ -137,19 +154,14 @@ export default function PlantCard({ imageUrl, name, price, description }) {
                     feedbackType="invalid"
                   />
                 </Form.Group>
-                <Button type="submit">Submit form</Button>
+                <button className="position-absolute m-4 w-25 rounded-5 bottom-0 start-0 green-button" style={{backgroundColor: "#F28F8F"}} onClick={handleClose}>Close</button>
+                <button className="position-absolute m-4 w-25 rounded-5 bottom-0 end-0 green-button" type="submit">Submit</button>
               </Form>
             </div>
+            </div>
+
           </div>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </motion.div>
   );

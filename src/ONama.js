@@ -1,71 +1,106 @@
 import Navbar from "./components/Navbar";
 import PageTransition from "./components/animationComponents/PageTransition";
 import SideSequence from "./components/animationComponents/SideSequence";
+import Footer from "./components/Footer";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default function ONama() {
   return (
     <div>
       <Navbar />
       <PageTransition>
-        <hr />
         <div className="container">
           <SideSequence delay={0.5}>
-            <h2>
-              OPG Šincek - Uzgoj Odojaka, Svinja i Proizvodnja Žitarica, Grožđa
-              i Bučinog Ulja
-            </h2>
-            <p>
-              OPG Šincek je obiteljsko poljoprivredno gospodarstvo koje se
-              ponosi tradicijom i strašću za poljoprivredom. Naša priča započela
-              je 1990. godine, kada smo se posvetili uzgoju odojaka i
-              svinja-tovljenika. Od tada, kontinuirano radimo na poboljšanju
-              kvalitete naših proizvoda i pružanju najbolje skrbi za naše
-              životinje.
-            </p>
+            <Row className="d-flex justify-content-between align-items-center">
+              <Col md={5}>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tempus augue consequat
+                  ante donec arcu in. Ullamcorper ut id at elementum diam
+                  facilisis tellus risus. Neque id facilisis duis sit duis. Nunc
+                  ac sapien mauris vivamus. Blandit habitasse laoreet sed
+                  magnis.
+                </p>
+              </Col>
+              <Col md={5}>
+                <p className="fs-1 fw-bold">
+                  Lorem ipsum dolor sit amet consectetur
+                </p>
+              </Col>
+            </Row>
           </SideSequence>
+
+          <hr></hr>
           <SideSequence delay={0.7}>
-            <h3>Uzgoj Odojaka i Svinja</h3>
-            <p>
-              Naša primarna djelatnost je uzgoj odojaka i svinja-tovljenika.
-              Stavljamo poseban naglasak na njihovu prehranu, udobnost i
-              zdravlje. Kroz godine iskustva, razvili smo visoke standarde u
-              uzgoju, osiguravajući da naši proizvodi budu vrhunske kvalitete.
-              Naši odojci i svinje dobivaju najbolju brigu i prehranu kako bi
-              rezultirali mesom visoke nutritivne vrijednosti i izvanrednog
-              okusa.
-            </p>
+            <Row className="d-flex flex-column justify-content-center align-items-center text-center">
+              <Col md={8} className="mb-3">
+                <p className="fs-1 fw-bold" style={{ color: "#73F28F" }}>
+                  Lorem ipsum dolor
+                </p>
+              </Col>
+              <Col md={7}>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tempus augue consequat
+                  ante donec arcu in. Ullamcorper ut id at elementum diam
+                  facilisis tellus risus. Neque id facilisis duis sit duis. Nunc
+                  ac sapien mauris vivamus. Blandit habitasse laoreet sed
+                  magnis.
+                </p>
+              </Col>
+            </Row>
           </SideSequence>
+          <hr></hr>
           <SideSequence delay={0.9}>
-            <h3>Proizvodnja Žitarica, Grožđa i Bučinog Ulja</h3>
-            <p>
-              Uzgoj odojaka i svinja samo je jedan dio naše raznovrsne
-              poljoprivredne djelatnosti. Osim toga, posvećeni smo i proizvodnji
-              različitih žitarica koje koristimo za hranu naših životinja.
-              Također uzgajamo grožđe, iz kojeg proizvodimo visokokvalitetna
-              vina, te buču koju pretvaramo u ukusno bučino ulje. Naš cilj je
-              proizvoditi visokokvalitetne proizvode koji će zadovoljiti potrebe
-              naših kupaca i pridonijeti zdravoj prehrani.
-            </p>
+            <Row className="d-flex justify-content-between align-items-center">
+              <Col md={4}>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tempus augue consequat
+                  ante donec arcu in.
+                </p>
+              </Col>
+              <Col
+                md={7}
+                className="d-flex justify-content-around align-items-center"
+              >
+                <Col md={2}>
+                  <img
+                    src="3.jpeg"
+                    alt="plant"
+                    className="img-fluid"
+                    width={"100%"}
+                  />
+                </Col>
+                <Col md={8} className="d-flex">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur. Tempus augue
+                    consequat ante donec arcu in.
+                  </p>
+                </Col>
+              </Col>
+            </Row>
           </SideSequence>
-          <SideSequence delay={1.1}>
-            <h3>Članovi PDV-a od 2003. godine</h3>
-            <p>
-              Ponosno smo članovi sustava PDV-a od 2003. godine, što potvrđuje
-              našu profesionalnost i transparentnost u poslovanju. Kontinuirano
-              pratimo i prilagođavamo se zakonodavnim promjenama kako bismo
-              osigurali usklađenost sa svim poreznim i regulatornim zahtjevima.
-            </p>
-          </SideSequence>
+        <hr></hr>
           <SideSequence delay={1.3}>
-            <p>
-              Zahvaljujemo na podršci i povjerenju koje nam pružate već dugi niz
-              godina. S veseljem radimo na očuvanju visokih standarda kvalitete
-              i raznolikosti naše ponude. Ako imate bilo kakva pitanja ili
-              trebate dodatne informacije, slobodno nas kontaktirajte.
-            </p>
+            <Row className="d-flex justify-content-between align-items-center">
+              <Col md={5}>
+                <p className="fs-1 fw-bold">
+                  Lorem ipsum dolor sit amet consectetur
+                </p>
+              </Col>
+              <Col md={5}>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tempus augue consequat
+                  ante donec arcu in. Ullamcorper ut id at elementum diam
+                  facilisis tellus risus. Neque id facilisis duis sit duis. Nunc
+                  ac sapien mauris vivamus. Blandit habitasse laoreet sed
+                  magnis.
+                </p>
+              </Col>
+            </Row>
           </SideSequence>
         </div>
       </PageTransition>
+      <Footer />
     </div>
   );
 }

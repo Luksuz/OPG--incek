@@ -1,0 +1,26 @@
+.my__carousel_main {
+    div{
+        ol{
+            li{
+                background-color: red;
+                border-radius: 50%;
+                height: 10px;
+                width: 10px;
+            }
+        }
+    }
+}
+
+.animated-button{
+    width: 20%;
+    background-color: #73F28F;
+    transition: 0.5s;
+    outline-color: #73F28F;
+
+}
+
+.animated-button:hover{
+    width: 50%;
+    background-color: #7fe795;
+    transition: 0.5s;
+}

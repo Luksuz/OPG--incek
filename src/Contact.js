@@ -2,9 +2,9 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function FormExample() {
   const [validated, setValidated] = useState(false);
@@ -19,12 +19,23 @@ function FormExample() {
     setValidated(true);
   };
 
+  const styles = {
+    backgroundColor: '#73F28F',
+  }
+
   return (
     <div>
     <Navbar />
-    <Form noValidate validated={validated} onSubmit={handleSubmit} className='container d-flex flex-column justify-content-center align-items-center bordered rounded-5 bg-secondary w-50 w-sm-75'>
+    <Row className='d-flex align-items-center justify-content-center'>
+      <Col lg={5}>
+    <Form noValidate validated={validated} onSubmit={handleSubmit} className='container d-flex flex-column text-start justify-content-center align-items-center bordered rounded-5 w-sm-75'>
+    <p className='fs-1'> Contact us</p>
+    <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+
       <Row className="mb-3 d-flex flex-column">
-        <Form.Group as={Col} md="12" controlId="validationCustom01">
+        <div className='d-flex'>
+
+        <Form.Group className='mx-3' as={Col} md="6" controlId="validationCustom01">
           <Form.Label>First name</Form.Label>
           <Form.Control
             required
@@ -34,7 +45,7 @@ function FormExample() {
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="12" controlId="validationCustom02">
+        <Form.Group as={Col} md="6" controlId="validationCustom02">
           <Form.Label>Last name</Form.Label>
           <Form.Control
             required
@@ -44,38 +55,25 @@ function FormExample() {
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="12" controlId="validationCustomUsername">
-          <Form.Label>Username</Form.Label>
-          <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-            <Form.Control
-              type="text"
-              placeholder="Username"
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please choose a username.
-            </Form.Control.Feedback>
-          </InputGroup>
-        </Form.Group>
+        </div>
+
       </Row>
-      <Row className="mb-3 d-flex flex-column">
-        <Form.Group as={Col} md="12" controlId="validationCustom03">
+      <Row className="mb-3">
+        <Form.Group as={Col} md="4" controlId="validationCustom03">
           <Form.Label>City</Form.Label>
           <Form.Control type="text" placeholder="City" required />
           <Form.Control.Feedback type="invalid">
             Please provide a valid city.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="12" controlId="validationCustom04">
+        <Form.Group as={Col} md="4" controlId="validationCustom04">
           <Form.Label>State</Form.Label>
           <Form.Control type="text" placeholder="State" required />
           <Form.Control.Feedback type="invalid">
             Please provide a valid state.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="12" controlId="validationCustom05">
+        <Form.Group as={Col} md="4" controlId="validationCustom05">
           <Form.Label>Zip</Form.Label>
           <Form.Control type="text" placeholder="Zip" required />
           <Form.Control.Feedback type="invalid">
@@ -93,6 +91,38 @@ function FormExample() {
       </Form.Group>
       <Button type="submit">Submit form</Button>
     </Form>
+    </Col>
+
+    <Col lg={5} className='mx-5'>
+    <div className='d-flex justify-content-center align-items-center'>
+        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles}/>
+        <div>
+          <p className='mb-4'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+          <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
+        </div>
+       
+      </div>
+
+      <div className='d-flex justify-content-center align-items-center'>
+        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles}/>
+        <div>
+          <p className='mb-4'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+          <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
+        </div>
+       
+      </div>
+
+      <div className='d-flex justify-content-center align-items-center'>
+        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles}/>
+        <div className='mb-4'>
+          <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+          <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
+        </div>
+       
+      </div>
+    </Col>
+    </Row>
+    <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Home from '../../Home';
 import ONama from '../../ONama';
 import Contact from '../../Contact';
 import Ponuda from '../../Ponuda';
+import Košarica from '../../Košarica';
 
 import { AnimatePresence } from "framer-motion"
 
@@ -17,6 +18,7 @@ export default function AnimatedRoutes() {
         <Route path="/ONama" element={<ONama />} />
         <Route path="/Kontakt" element={<Contact />} />
         <Route path="/Ponuda" element={<Ponuda />} />
+        <Route path="/Košarica" element={<Košarica />} />
       </Routes>
       </AnimatePresence >
 

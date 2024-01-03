@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import PlantCard from "./components/plantCard";
 import plantData from "./plantsInfo";
 import PageTransition from "./components/animationComponents/PageTransition";
+import Footer from "./components/Footer";
 
 export default function Ponuda() {
   const mappedPlantData = plantData.map((plant, index) => {
@@ -36,6 +37,7 @@ export default function Ponuda() {
         </div>
       </div>
       </PageTransition>
+      <Footer />
     </div>
   );
 }
