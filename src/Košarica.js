@@ -45,6 +45,7 @@ export default function Košarica() {
         "date": new Date().toISOString() // Convert the date to a string that can be sent in JSON
       })
     });
+    //eslint-disable-next-line
     const data = await response.json();
     clearCart();
   }
@@ -71,6 +72,7 @@ export default function Košarica() {
 
   function handleClose() {
     setShow(false);
+    setValidated(false);
   }
 
   return (
@@ -102,11 +104,13 @@ export default function Košarica() {
                     src="minus.png"
                     className="border p-2 rounded-5"
                     onClick={removeQuantity}
+                    alt="minus"
                   />
                   <img
                     src="plus.png"
                     className="border p-2 rounded-5"
                     onClick={addQuantity}
+                    alt="plus"
                   />
                 </div>
               </Col>

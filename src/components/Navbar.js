@@ -81,6 +81,7 @@ export default function Navbar() {
             <img src="shopping-cart.png" onClick={() => {
               navigate("/Košarica");
             }}
+            alt="cart"
             />
             <span className="cart-icon">{quantity}</span>
         </div>
@@ -90,7 +91,7 @@ export default function Navbar() {
       <div className="container-fluid d-flex justify-content-between align-items-center d-block d-md-none">
     <Dropdown>
       <Dropdown.Toggle >
-      <img src="menu.png" id="dropdown-basic" className="bg-transparent"/>
+      <img src="menu.png" id="dropdown-basic" className="bg-transparent" alt="dropdown"/>
       </Dropdown.Toggle>
 
       <Dropdown.Menu>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Modal, Form, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "../styles.css";

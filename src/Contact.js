@@ -95,7 +95,7 @@ function FormExample() {
 
     <Col lg={5} className='mx-5'>
     <div className='d-flex justify-content-center align-items-center'>
-        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles}/>
+        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles} alt='support'/>
         <div>
           <p className='mb-4'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
           <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
@@ -104,7 +104,7 @@ function FormExample() {
       </div>
 
       <div className='d-flex justify-content-center align-items-center'>
-        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles}/>
+        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles} alt='support'/>
         <div>
           <p className='mb-4'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
           <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
@@ -113,7 +113,7 @@ function FormExample() {
       </div>
 
       <div className='d-flex justify-content-center align-items-center'>
-        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles}/>
+        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles} alt='support'/>
         <div className='mb-4'>
           <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
           <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
