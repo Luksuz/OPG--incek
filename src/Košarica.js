@@ -33,7 +33,7 @@ export default function Košarica() {
     e.preventDefault();
     console.log(userData);
     console.log(cart);
-    const response = await fetch("http://localhost:5000/create-invoice", {
+    const response = await fetch("https://qm5psex7mj.execute-api.us-east-1.amazonaws.com/send-invoice", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
