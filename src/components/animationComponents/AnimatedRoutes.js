@@ -18,7 +18,7 @@ export default function AnimatedRoutes() {
         <Route path="/ONama" element={<ONama />} />
         <Route path="/Kontakt" element={<Contact />} />
         <Route path="/Ponuda" element={<Ponuda />} />
-        <Route path="/Košarica" element={<Košarica />} />
+        <Route path="/Kosarica" element={<Košarica />} />
       </Routes>
       </AnimatePresence >
 

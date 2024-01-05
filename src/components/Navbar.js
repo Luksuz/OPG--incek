@@ -79,7 +79,7 @@ export default function Navbar() {
         </div>
         <div className="position-relative">
             <img src="shopping-cart.png" onClick={() => {
-              navigate("/Košarica");
+              navigate("/Kosarica");
             }}
             alt="cart"
             />
