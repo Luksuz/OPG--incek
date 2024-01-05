@@ -1,11 +1,24 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Dropdown } from "react-bootstrap";
-import "./Navbar.css";
+import "../styles.css";
+import { useEffect, useState } from "react";
 
 
 export default function Navbar() {
+  const [quantity, setQuantity] = useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    let cartItems = 0;
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (cart) {
+      cart.forEach((item) => {
+        cartItems += Number(item.quantity);
+      });
+    }
+    setQuantity(cartItems);
+  }, []);
 
   return (
     <nav className="navbar shadow sticky-top mb-5" style={{backgroundColor: "#73F28F"}}>
@@ -64,11 +77,12 @@ export default function Navbar() {
 
           </ul>
         </div>
-        <div>
+        <div className="position-relative">
             <img src="shopping-cart.png" onClick={() => {
               navigate("/Košarica");
             }}
             />
+            <span className="cart-icon">{quantity}</span>
         </div>
       </div>
 

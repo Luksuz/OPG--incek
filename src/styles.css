@@ -6,3 +6,21 @@
     outline-color: #73F28F;
     border: #73F28F;
 }
+
+.nav-link{
+    color: #293C5B;
+ }
+
+.cart-icon{
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    top: -5px;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: #73a6f2;
+    color: white;
+}
