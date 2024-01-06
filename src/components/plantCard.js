@@ -18,11 +18,13 @@ export default function PlantCard({ imageUrl, name, price, description }) {
     setShow(false);
   }
 
-  const handleShow = () => {
+  const handleShow = (e) => {
+    e.preventDefault();
     setShow(true);
   };
 
-  const handleClose = () => {
+  const handleClose = (e) => {
+    e.preventDefault();
     setShow(false);
   };
 
