@@ -6,7 +6,6 @@ import "../styles.css";
 export default function PlantCard({ imageUrl, name, price, description }) {
   const [quantity, setQuantity] = useState(null);
   const [show, setShow] = useState(false);
-  const [validated, setValidated] = useState(false);
 
   const cartData = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -16,27 +15,17 @@ export default function PlantCard({ imageUrl, name, price, description }) {
     console.log(quantity + "added to basket");
     const newCartData = [...cartData, { "name" : name, "quantity" : quantity, "price" : price, "imageUrl" : imageUrl}];
     localStorage.setItem("cart", JSON.stringify(newCartData));
+    setShow(false);
   }
 
   const handleShow = () => {
-    console.log("show");
     setShow(true);
   };
 
   const handleClose = () => {
-    console.log("close");
     setShow(false);
   };
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-  };
 
   return (
     <motion.div
@@ -73,10 +62,7 @@ export default function PlantCard({ imageUrl, name, price, description }) {
               {description}
               <hr />
               <div className="d-flex">
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
-
-                  <hr></hr>
-
+                <Form noValidate>
                   <Row className="mb-3 d-flex justify-content-between">
                     <Form.Group
                       as={Col}

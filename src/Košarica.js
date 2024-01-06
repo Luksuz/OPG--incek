@@ -78,9 +78,9 @@ export default function Košarica() {
   return (
     <div>
       <Navbar />
-      {cart ? (
-        cart.map((item, index) => {
-          return (
+      <p className="text-center display-4" style={{color: "#73F28F"}}>{cart.length === 0 && "Košarica je prazna"}</p>
+      {cart && cart.map((item, index) => {
+          return(
             <Row
               key={index}
               className="d-flex justify-content-between align-items-center text-center"
@@ -115,11 +115,10 @@ export default function Košarica() {
                 </div>
               </Col>
             </Row>
-          );
+          )
         })
-      ) : (
-        <p>Košarica je prazna</p>
-      )}
+      }
+      
       <Row>
         <Col md={10} className="d-flex justify-content-end m-5">
           <button onClick={clearCart} className="btn btn-danger">
@@ -155,11 +154,12 @@ export default function Košarica() {
       {/* Modal */}
       <Modal show={show} onHide={handleClose} className="modal-xl">
         <Modal.Body className="p-0">
-          <div className="d-flex flex-row flex-md-col">
-            <div className="row justify-content-center align-items-center me-3">
+
+          <Row className="d-flex m-3">
+            <Col lg={6} sm={12} className="row justify-content-center align-items-center">
               <img src="delivery.jpeg" alt="delivery" className="img-fluid" />
-            </div>
-            <div className="mt-4">
+            </Col>
+            <Col lg={6} sm={12} className="mt-4">
               <h5 className="card-title">Dostava</h5>
               lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
               ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
@@ -305,8 +305,8 @@ export default function Košarica() {
                   </button>
                 </Form>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </Modal.Body>
       </Modal>
 
