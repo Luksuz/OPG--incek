@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import "./styles.css";
 
 function FormExample() {
   const [validated, setValidated] = useState(false);
@@ -26,7 +26,7 @@ function FormExample() {
   return (
     <div>
     <Navbar />
-    <Row className='d-flex align-items-center justify-content-center'>
+    <Row className='d-flex justify-content-center'>
       <Col lg={5}>
     <Form noValidate validated={validated} onSubmit={handleSubmit} className='container d-flex flex-column text-start justify-content-center align-items-center bordered rounded-5 w-sm-75'>
     <p className='fs-1'> Contact us</p>
@@ -89,37 +89,12 @@ function FormExample() {
           feedbackType="invalid"
         />
       </Form.Group>
-      <Button type="submit">Submit form</Button>
+      <button type="submit" className='green-button'>Submit form</button>
     </Form>
     </Col>
 
     <Col lg={5} className='mx-5'>
-    <div className='d-flex justify-content-center align-items-center'>
-        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles} alt='support'/>
-        <div>
-          <p className='mb-4'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-          <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
-        </div>
-       
-      </div>
-
-      <div className='d-flex justify-content-center align-items-center'>
-        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles} alt='support'/>
-        <div>
-          <p className='mb-4'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-          <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
-        </div>
-       
-      </div>
-
-      <div className='d-flex justify-content-center align-items-center'>
-        <img src='pdf.png' className='img-fluid p-2 me-4 rounded-4' style={styles} alt='support'/>
-        <div className='mb-4'>
-          <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-          <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ips</p>
-        </div>
-       
-      </div>
+        <img src='4.jpeg' className='img-fluid p-2 me-4 rounded-4' style={styles} alt='support'/>
     </Col>
     </Row>
     <Footer />

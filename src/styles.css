@@ -1,10 +1,11 @@
 .green-button{
-    height: 5%;
-    width: 10%;
+    height: auto;
+    width: 50%;
     background-color: #73F28F;
     transition: 0.5s;
     outline-color: #73F28F;
     border: #73F28F;
+    border-radius: 10px;
 }
 
 .nav-link{

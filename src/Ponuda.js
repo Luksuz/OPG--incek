@@ -4,12 +4,18 @@ import PlantCard from "./components/plantCard";
 import plantData from "./plantsInfo";
 import PageTransition from "./components/animationComponents/PageTransition";
 import Footer from "./components/Footer";
+import Col from "react-bootstrap/Col";
 
 export default function Ponuda() {
   const mappedPlantData = plantData.map((plant, index) => {
     return (
-      <div
-        className="col-6 col-lg-4 mb-2"
+      <Col
+        xs={12}
+        sm={6}
+        md={4}
+        lg={4}
+        xl={3}
+        className="mb-2"
         key={index}
       >
         <PlantCard
@@ -18,7 +24,7 @@ export default function Ponuda() {
           price={plant.price}
           description={plant.description}
         />
-      </div>
+      </Col>
     );
   });
 
@@ -27,7 +33,7 @@ export default function Ponuda() {
       <Navbar />
       <PageTransition>
       <div
-        className="container d-flex justify-content-center"
+        className="container d-flex justify-content-center align-items-center"
         
       >
         <div className="row">
