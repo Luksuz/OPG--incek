@@ -5,6 +5,7 @@ import ONama from '../../ONama';
 import Contact from '../../Contact';
 import Ponuda from '../../Ponuda';
 import Košarica from '../../Košarica';
+import AdminLogin from '../../AdminLogin';
 
 import { AnimatePresence } from "framer-motion"
 
@@ -19,6 +20,7 @@ export default function AnimatedRoutes() {
         <Route path="/Kontakt" element={<Contact />} />
         <Route path="/Ponuda" element={<Ponuda />} />
         <Route path="/Kosarica" element={<Košarica />} />
+        <Route path="/Adminlogin" element={<AdminLogin />} />
       </Routes>
       </AnimatePresence >
 

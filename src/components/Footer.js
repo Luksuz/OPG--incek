@@ -1,6 +1,12 @@
-
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+    const navigate = useNavigate();
+    
+    function handleAdminClick() {
+        navigate("/AdminLogin");
+    }
+
     return (
         <div className="container-fluid bg-secondary position-relative fixed-bottom mt-5" style={{backgroundColor: "#73F28F"}}>
         <div className="row d-flex justify-content-center align-items-center">
@@ -19,6 +25,7 @@ export default function Footer() {
                 <p>Kontakt</p>
                 <p>Ponuda</p>
                 <p>Košarica</p>
+                <p href="/AdminLogin" onClick={handleAdminClick}>Admin login</p>
             </div>
             </div >
         </div>

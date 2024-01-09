@@ -87,8 +87,8 @@ export default function Košarica() {
             >
               <Col>
                 <img
-                  src={item.imageUrl}
-                  alt="plant"
+                  src={"data:image/webp;base64," + item.imageUrl}
+                  alt={item.name}
                   className="img-fluid rounded-1 shadow-lg"
                   width={"30%"}
                 />

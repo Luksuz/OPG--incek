@@ -51,16 +51,18 @@ export default function ONama() {
           </SideSequence>
           <hr></hr>
           <SideSequence delay={0.9}>
-            <Row className="d-flex justify-content-between align-items-center">
+            <Row className="d-flex justify-content-center align-items-center">
               <Col md={4}>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Tempus augue consequat
                   ante donec arcu in.
                 </p>
               </Col>
-              <Col
+              </Row>
+
+              <Row
                 md={7}
-                className="d-flex justify-content-around align-items-center"
+                className="d-flex justify-content-around align-items-center text-center"
               >
                 <Col md={2}>
                   <img
@@ -76,8 +78,7 @@ export default function ONama() {
                     consequat ante donec arcu in.
                   </p>
                 </Col>
-              </Col>
-            </Row>
+              </Row>
           </SideSequence>
         <hr></hr>
           <SideSequence delay={1.3}>

@@ -38,7 +38,7 @@ export default function PlantCard({ imageUrl, name, price, description }) {
       style={{ width: "18rem" }}
     >
       <img
-        src={imageUrl}
+        src={"data:image/webp;base64," + imageUrl}
         className="card-img-top img-fluid"
         alt={name}
         onClick={handleShow}
@@ -57,7 +57,8 @@ export default function PlantCard({ imageUrl, name, price, description }) {
         <Modal.Body className="p-0">
           <div className="d-flex flex-row flex-md-col">
             <div className="row justify-content-center align-items-center me-3">
-              <img src={imageUrl} alt={name} className="img-fluid" />
+              <img         src={"data:image/webp;base64," + imageUrl}
+ alt={name} className="img-fluid" />
             </div>
             <div className="mt-4">
               <h5 className="card-title">{name}</h5>
@@ -85,8 +86,8 @@ export default function PlantCard({ imageUrl, name, price, description }) {
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
-
-                  <button
+<div className="mb-3">
+<button
                     className="position-absolute m-4 w-25 rounded-5 bottom-0 start-0 green-button"
                     style={{ backgroundColor: "#F28F8F" }}
                     onClick={handleClose}
@@ -100,6 +101,8 @@ export default function PlantCard({ imageUrl, name, price, description }) {
                   >
                     Submit
                   </button>
+</div>
+                  
                 </Form>
               </div>
             </div>
