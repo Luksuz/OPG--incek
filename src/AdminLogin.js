@@ -5,27 +5,18 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Navbar from './components/Navbar';
+import login from './APIUtils/adminAPI';
 
 function AdminLogin() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const response = await fetch('https://eipf2exv0c.execute-api.us-east-1.amazonaws.com/sincek/adminlogin', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({username, password}),
-        });
-        const body = await response.text();
-        if (body.token) {
-        localStorage.setItem('token', body.token);      
-        } else{
-            alert(body);
-        }  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      login(username, password);
     };
+
+
 
   document.body.style.backgroundColor = "#73F28F90";
 
