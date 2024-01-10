@@ -11,8 +11,8 @@ const response = await fetch('https://eipf2exv0c.execute-api.us-east-1.amazonaws
     console.log(body);
     if (body.token) {
         localStorage.setItem('sincek_token', body.token);  
-        return {"message": "Uspješna prijava!"};
+        alert("Uspješna prijava!");
     } else{
-        return {"message": "Neuspješna prijava!"};
+        alert("Neuspješna prijava!");
     }  
 };
