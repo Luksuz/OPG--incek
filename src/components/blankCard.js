@@ -13,6 +13,17 @@ export default function BlankCard() {
     price: "",
   });
 
+  const handleSetImage = (file) => {
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+        };
+        reader.readAsDataURL(file);
+        setImageData({ ...imageData, image: file });
+    }
+    };
+
+
   const handleSetImageName = (e) => {
     setImageData({ ...imageData, name: e });
   };
@@ -66,11 +77,11 @@ export default function BlankCard() {
         {/* Add onSubmit event handler to the Form */}
         <Form noValidate encType="multipart/form-data" onSubmit={(e) => {
             e.preventDefault();
-            uploadImage(imageData, e.target.image.files[0]);
+            uploadImage(imageData.image, imageData.name, imageData.description, imageData.price, localStorage.getItem("sincek_token"));
         }}>
             {/* Update InputGroup for file upload */}
             <InputGroup>
-                <Form.Control type="file" name="image" accept="image/*" />
+            <Form.Control onChange={(e) => handleSetImage(e.target.files[0])} type="file" name="image" accept="image/*" />
             </InputGroup>
 
             <Row className="mb-3 d-flex justify-content-between">
