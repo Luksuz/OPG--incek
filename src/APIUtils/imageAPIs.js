@@ -43,7 +43,6 @@ async function uploadImage(imageFile, name, price, description, token) {
     });
     return response.json();
 }
-}
 
 
 export { getImages, deleteImage, uploadImage };
