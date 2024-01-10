@@ -29,7 +29,6 @@ async function deleteImage(imageId, token) {
 }}
 
 async function uploadImage(imageFile, name, price, description, token) {
-
     let formData = new FormData();
 
     formData.append('image', imageFile);
@@ -40,12 +39,10 @@ async function uploadImage(imageFile, name, price, description, token) {
 
     const response = await fetch(`https://eipf2exv0c.execute-api.us-east-1.amazonaws.com/sincek/images`, {
         method: "POST",
-        headers: {
-            "Content-Type": "multipart/form-data",
-        },
         body: formData,
     });
     return response.json();
+}
 }
 
 
