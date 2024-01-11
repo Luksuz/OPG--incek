@@ -33,7 +33,7 @@ export default function Ponuda() {
         <Row>
           <h1>Ponuda</h1>
           <hr />
-          {plantData &&
+          {plantData.length > 0  &&
           plantData.map((plant) => {
             return (
               <Col

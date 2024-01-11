@@ -6,16 +6,21 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Navbar from './components/Navbar';
 import login from './APIUtils/adminAPI';
+import { useNavigate } from 'react-router-dom';
 
 function AdminLogin() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    async function handleSubmit(event){
       event.preventDefault();
-      login(username, password);
-    };
-
+      const response = await login(username, password);
+      if(response.token){
+        console.log(response.token);
+        navigate('/Ponuda');
+      }
+    }
 
 
   document.body.style.backgroundColor = "#73F28F90";

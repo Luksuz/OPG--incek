@@ -41,6 +41,14 @@ async function uploadImage(imageFile, name, price, description, token) {
         method: "POST",
         body: formData,
     });
+    if(response.status === 200){
+        alert("Ponuda uspješno dodana, osvježite stranicu da vidite ažuriranu ponudu!");
+    }else if(response.status === 403){
+        alert("Pristup nije autoriziran, prijavite se!");
+    }
+    else{
+        alert("Neuspješno dodavanje ponude, dogodila se greška! Kontaktirajte administrator!");
+    }
     return response.json();
 }
 

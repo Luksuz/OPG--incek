@@ -6,6 +6,7 @@ import "../styles.css";
 
 export default function BlankCard() {
   const [show, setShow] = useState(false);
+  const [imageUrl, setImageUrl] = useState(null); // [image, setImage
   const [imageData, setImageData] = useState({
     image: null,
     name: "",
@@ -13,16 +14,29 @@ export default function BlankCard() {
     price: "",
   });
 
-  const handleSetImage = (file) => {
+  const handleSetUploadedImage = (file) => {
     if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-        };
-        reader.readAsDataURL(file);
-        setImageData({ ...imageData, image: file });
+      const reader = new FileReader();
+      reader.onload = function (e) {};
+      reader.readAsDataURL(file);
+      setImageData({ ...imageData, image: file });
     }
-    };
 
+    const url = URL.createObjectURL(file);
+    setImageUrl(url);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    uploadImage(
+      imageData.image,
+      imageData.name,
+      imageData.description,
+      imageData.price,
+      localStorage.getItem("sincek_token")
+    );
+    setShow(false);
+  };
 
   const handleSetImageName = (e) => {
     setImageData({ ...imageData, name: e });
@@ -72,99 +86,111 @@ export default function BlankCard() {
       </div>
 
       {/* Modal */}
-      <Modal show={show} onHide={handleClose} className="modal-xl" style={{height: "50%"}}>
-    <Modal.Body className="p-0">
-        {/* Add onSubmit event handler to the Form */}
-        <Form noValidate encType="multipart/form-data" onSubmit={(e) => {
-            e.preventDefault();
-            uploadImage(imageData.image, imageData.name, imageData.description, imageData.price, localStorage.getItem("sincek_token"));
-        }}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className="modal-xl"
+        style={{ height: "100%" }}
+      >
+        <Modal.Body className="p-0">
+          {/* Add onSubmit event handler to the Form */}
+          <Form
+            noValidate
+            encType="multipart/form-data"
+            onSubmit={(e) => handleSubmit(e)}
+            className="d-flex flex-column justify-content-center align-items-center"
+          >
             {/* Update InputGroup for file upload */}
-            <InputGroup>
-            <Form.Control onChange={(e) => handleSetImage(e.target.files[0])} type="file" name="image" accept="image/*" />
-            </InputGroup>
+            <Row className="mb-3 text-center w-50">
+              <InputGroup>
+                <Form.Control
+                  onChange={(e) => handleSetUploadedImage(e.target.files[0])}
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                />
+              </InputGroup>
+              {imageUrl && <img src={imageUrl} alt="Uploaded" />}
+            </Row>
 
-            <Row className="mb-3 d-flex justify-content-between">
-                  <Form.Group
-                    as={Col}
-                    md="8"
-                    controlId="validationCustom03"
-                    className="w-50"
-                  >
-                    <Form.Label>Naziv sadnice</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="naziv sadnice"
-                      value={imageData.name}
-                      onChange={(e) => handleSetImageName(e.target.value)}
-                      required
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      Quantity
-                    </Form.Control.Feedback>
-                  </Form.Group>
+            <Row className="mb-3 ">
+              <Form.Group
+                as={Col}
+                md="8"
+                controlId="validationCustom03"
+                className="w-50"
+              >
+                <Form.Label>Naziv sadnice</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="naziv sadnice"
+                  value={imageData.name}
+                  onChange={(e) => handleSetImageName(e.target.value)}
+                  required
+                />
+                <Form.Control.Feedback type="invalid">
+                  Quantity
+                </Form.Control.Feedback>
+              </Form.Group>
 
-                  <Form.Group
-                    as={Col}
-                    md="8"
-                    controlId="validationCustom03"
-                    className="w-50"
-                  >
-                    <Form.Label>Opis</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Opis"
-                      value={imageData.description}
-                      onChange={(e) =>
-                        handleSetImageDescription(e.target.value)
-                      }
-                      required
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      Quantity
-                    </Form.Control.Feedback>
-                  </Form.Group>
+              <Form.Group
+                as={Col}
+                md="8"
+                controlId="validationCustom03"
+                className="w-50"
+              >
+                <Form.Label>Opis</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Opis"
+                  value={imageData.description}
+                  onChange={(e) => handleSetImageDescription(e.target.value)}
+                  required
+                />
+                <Form.Control.Feedback type="invalid">
+                  Quantity
+                </Form.Control.Feedback>
+              </Form.Group>
 
-                  <Form.Group
-                    as={Col}
-                    md="8"
-                    controlId="validationCustom03"
-                    className="w-50"
-                  >
-                    <Form.Label>Cijena sadnice</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Price"
-                      value={imageData.price}
-                      onChange={(e) => handleSetImagePrice(e.target.value)}
-                      required
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      Quantity
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Row>
+              <Form.Group
+                as={Col}
+                md="8"
+                controlId="validationCustom03"
+                className="w-50"
+              >
+                <Form.Label>Cijena sadnice</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Price"
+                  value={imageData.price}
+                  onChange={(e) => handleSetImagePrice(e.target.value)}
+                  required
+                />
+                <Form.Control.Feedback type="invalid">
+                  Quantity
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
 
-            <div className="mb-3">
-                <button
-                  className="position-absolute m-4 w-25 rounded-5 bottom-0 start-0 green-button"
-                  style={{ backgroundColor: "#F28F8F" }}
-                  onClick={handleClose}
-                >
-                  Close
-                </button>
-                {/* Change type to "submit" for the Submit button */}
-                <button
-                  className="position-absolute m-4 w-25 rounded-5 bottom-0 end-0 green-button"
-                  type="submit"
-                >
-                  Submit
-                </button>
+            <div className="my-5">
+              <button
+                className="position-absolute m-4 w-25 rounded-5 bottom-0 start-0 green-button"
+                style={{ backgroundColor: "#F28F8F" }}
+                onClick={handleClose}
+              >
+                Close
+              </button>
+              {/* Change type to "submit" for the Submit button */}
+              <button
+                className="position-absolute m-4 w-25 rounded-5 bottom-0 end-0 green-button"
+                type="submit"
+              >
+                Submit
+              </button>
             </div>
-        </Form>
-    </Modal.Body>
-</Modal>
-
+          </Form>
+        </Modal.Body>
+      </Modal>
     </motion.div>
   );
 }
