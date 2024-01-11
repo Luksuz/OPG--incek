@@ -55,7 +55,7 @@ export default function Ponuda() {
                 />
               </Col>
             );
-          })) : (<img src="loading.svg" alt="loader" />)}
+          })) : (<img src="loader.svg" alt="loader" />)}
           {token &&
           <Col
           xs={12}
