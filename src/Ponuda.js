@@ -33,8 +33,8 @@ export default function Ponuda() {
         <Row>
           <h1>Ponuda</h1>
           <hr />
-          {plantData.length > 0  &&
-          plantData.map((plant) => {
+
+          {plantData.length > 0 ? (plantData.map((plant) => {
             return (
               <Col
                 xs={12}
@@ -55,7 +55,7 @@ export default function Ponuda() {
                 />
               </Col>
             );
-          })}
+          })) : (<img src="loading.svg" alt="loader" />)}
           {token &&
           <Col
           xs={12}
