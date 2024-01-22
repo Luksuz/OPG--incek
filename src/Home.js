@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar";
-import Carousel from "react-bootstrap/Carousel";
 import PageTransition from "./components/animationComponents/PageTransition";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
