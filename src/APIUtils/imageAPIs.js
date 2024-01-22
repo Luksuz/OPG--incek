@@ -24,7 +24,7 @@ async function deleteImage(imageId, token) {
         return response.json();
     }
     else{
-        alert("Neuspješno brisanje ponude, dogodila se greška!");
+        alert("Neuspješno brisanje ponude, dogodila se greška! Prijavite se i pokušajte ponovno!");
     }
 }}
 

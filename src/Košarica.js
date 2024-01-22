@@ -5,12 +5,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import Alert from "react-bootstrap/Alert";
 
 export default function Košarica() {
   const [userData, setUserData] = useState({name: "", surname: "", email: "", phone: "", city: "", state: "", zip: ""});
   const [quantity, setQuantity] = useState(0);
   const [cart, setCart] = useState([]);
   const [show, setShow] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const [validated, setValidated] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -48,6 +50,8 @@ export default function Košarica() {
     //eslint-disable-next-line
     const data = await response.json();
     clearCart();
+    setShow(false);
+    setShowAlert(true);
   }
 
   const addQuantity = () => {
@@ -78,6 +82,11 @@ export default function Košarica() {
   return (
     <div>
       <Navbar />
+      {showAlert && (
+              <Alert className="position-absolute w-100 z-5" variant="success" onClose={() => setShow(false)} dismissible>
+             Pdf račun uspješno poslan na email adresu: {userData.email}
+            </Alert>
+            )}
       <p className="text-center display-4" style={{color: "#73F28F"}}>{cart.length === 0 && "Košarica je prazna"}</p>
       {cart && cart.map((item, index) => {
           return(

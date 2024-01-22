@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Navbar from './components/Navbar';
 import login from './APIUtils/adminAPI';
 import { useNavigate } from 'react-router-dom';
+import Footer from './components/Footer';
 
 function AdminLogin() {
     const [username, setUsername] = useState('');
@@ -71,6 +72,10 @@ function AdminLogin() {
 
       <Button type="submit">Submit form</Button>
     </Form>
+    <div className='position-absolute bottom-0'>
+    <Footer />
+
+    </div>
     </>
   );
 }

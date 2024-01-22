@@ -1,14 +1,20 @@
 import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+    const token = localStorage.getItem("sincek_token");
     const navigate = useNavigate();
     
     function handleAdminClick() {
         navigate("/AdminLogin");
     }
 
+    function handleLogoutClick() {
+        localStorage.removeItem("sincek_token");
+        alert("Uspješno ste se odjavili!");
+    }
+
     return (
-        <div className="container-fluid bg-secondary position-relative fixed-bottom mt-5" style={{backgroundColor: "#73F28F"}}>
+        <div className="container-fluid bg-secondary position-relative bottom-0 fixed-bottom mt-5" style={{backgroundColor: "#73F28F"}}>
         <div className="row d-flex justify-content-center align-items-center">
             <div className="col-4 text-center">
             <h1 className="">OPG Šincek</h1>
@@ -26,6 +32,7 @@ export default function Footer() {
                 <p>Ponuda</p>
                 <p>Košarica</p>
                 <p href="/AdminLogin" onClick={handleAdminClick}>Admin login</p>
+                {token && <p onClick={handleLogoutClick}>Logout</p>}
             </div>
             </div >
         </div>

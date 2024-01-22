@@ -6,6 +6,8 @@
     outline-color: #73F28F;
     border: #73F28F;
     border-radius: 10px;
+    align-self: center;
+    margin: 15px;
 }
 
 .nav-link{
@@ -25,3 +27,37 @@
     background-color: #73a6f2;
     color: white;
 }
+
+.green-shadow{
+    text-shadow:  0 0 50px #73F28F;
+}
+
+@media screen and (max-width: 768px){
+    .big-screen-paragraph{
+        font-size: 1rem;
+        }
+}
+
+
+
+
+.hero-section{
+    position: absolute;
+    font-size: 2rem;
+    width: 50%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    .hero-section{
+        font-size: rem;
+        width: 80%;
+        left: 40%;
+        top: 15%;
+        line-height: 1;
+        }
+}
+

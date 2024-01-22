@@ -80,7 +80,7 @@ export default function BlankCard() {
         <p className="card-text">opis sadnice</p>
         <hr />
         <p className="card-text">cijena sadnice</p>
-        <Button variant="primary" onClick={handleShow}>
+        <Button className="primary" onClick={handleShow}>
           Dodaj sadnicu
         </Button>
       </div>
