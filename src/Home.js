@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import "./styles.css";
 import "./home.css";
 
+
 function Home() {
   return (
     <>

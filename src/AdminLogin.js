@@ -70,7 +70,7 @@ function AdminLogin() {
 
       </Row>
 
-      <Button type="submit">Submit form</Button>
+      <Button type="submit">Prijavi se</Button>
     </Form>
     <div className='position-absolute bottom-0'>
     <Footer />

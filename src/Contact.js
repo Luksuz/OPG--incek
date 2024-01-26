@@ -30,30 +30,35 @@ function FormExample() {
     <Row className='d-flex justify-content-center'>
       <Col lg={5}>
     <Form noValidate validated={validated} onSubmit={handleSubmit} className='container d-flex flex-column bordered rounded-5 w-sm-100'>
-    <p className='fs-1 text-start'> Contact us</p>
-    <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+    <p className='fs-1 text-start'>Kontaktirajte nas</p>
+    <p>Ako imate kakvih upita 
+    ili želite naručiti sadnice,
+    slobodno nas kontaktirajte
+    putem kontakt forme ili direktno na 
+    na našu email adresu: sadnicesincek@gmail.com
+    </p>
 
       <Row className="mb-3 d-flex">
 
         <Form.Group className='' as={Col} md="6" sm="6" xs="6" controlId="validationCustom01">
-          <Form.Label>First name</Form.Label>
+          <Form.Label>Ime</Form.Label>
           <Form.Control
             required
             type="text"
             placeholder="First name"
             defaultValue="Mark"
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>Odlično!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="6" sm="6" xs="6" controlId="validationCustom02">
-          <Form.Label>Last name</Form.Label>
+          <Form.Label>Prezime</Form.Label>
           <Form.Control
             required
             type="text"
             placeholder="Last name"
             defaultValue="Otto"
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>Odlično!</Form.Control.Feedback>
         </Form.Group>
 
       </Row>
@@ -62,24 +67,24 @@ function FormExample() {
 
       <Row className="mb-3">
         <Form.Group as={Col} md="4" sm="4" xs="4" controlId="validationCustom03">
-          <Form.Label>City</Form.Label>
+          <Form.Label>Grad</Form.Label>
           <Form.Control type="text" placeholder="City" required />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid city.
+            Unesite grad
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4"sm="4" xs="4" controlId="validationCustom04">
-          <Form.Label>State</Form.Label>
+          <Form.Label>Županija</Form.Label>
           <Form.Control type="text" placeholder="State" required />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid state.
+            Unesite županiju
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" sm="4" xs="4" controlId="validationCustom05">
-          <Form.Label>Zip</Form.Label>
+          <Form.Label>Poštanski broj</Form.Label>
           <Form.Control type="text" placeholder="Zip" required />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid zip.
+            Unesite poštanski broj
           </Form.Control.Feedback>
         </Form.Group>
       </Row>
@@ -91,7 +96,7 @@ function FormExample() {
           feedbackType="invalid"
         />
       </Form.Group>
-      <button type="submit" className='green-button'>Submit form</button>
+      <button type="submit" className='green-button'>Pošalji</button>
     </Form>
     </Col>
 

@@ -170,9 +170,7 @@ export default function Košarica() {
             </Col>
             <Col lg={6} sm={12} className="mt-4">
               <h5 className="card-title">Dostava</h5>
-              lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-              ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-              lorem ipsum lorem ipsum lorem ipsum
+                <p>Besplatna dostava se vrši u krugu 15 kilometara od nas, a za sve ostale narudžbe, potrebno je osobno podići robu. </p>
               <hr />
               <div className="d-flex">
                 <Form noValidate validated={validated}>
@@ -183,7 +181,7 @@ export default function Košarica() {
                       md="4"
                       controlId="validationCustom01"
                     >
-                      <Form.Label>First name</Form.Label>
+                      <Form.Label>Ime</Form.Label>
                       <Form.Control
                         required
                         type="text"
@@ -192,7 +190,7 @@ export default function Košarica() {
                         value={userData.name}
                         onChange={(e) => setUserData({...userData, name: e.target.value})}
                       />
-                      <Form.Label>Last name</Form.Label>
+                      <Form.Label>Prezime</Form.Label>
                       <Form.Control
                         required
                         type="text"
@@ -201,7 +199,7 @@ export default function Košarica() {
                         value={userData.surname}
                         onChange={(e) => setUserData({...userData, surname: e.target.value})}
                       />
-                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                      <Form.Control.Feedback>Odlično!</Form.Control.Feedback>
                     </Form.Group>
                   </Row>
 
@@ -215,7 +213,7 @@ export default function Košarica() {
                       <Form.Label>Email</Form.Label>
                       <Form.Control type="text" placeholder="Email" value={userData.email} onChange={(e) => setUserData({...userData, email: e.target.value})} required />
                       <Form.Control.Feedback type="invalid">
-                        Your email adress
+                        Unesite važeći email
                       </Form.Control.Feedback>
                     </Form.Group>
 
@@ -225,7 +223,7 @@ export default function Košarica() {
                       controlId="validationCustom03"
                       className="w-50"
                     >
-                      <Form.Label>Phone number</Form.Label>
+                      <Form.Label>Kontakt broj</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder="Phone number"
@@ -234,7 +232,7 @@ export default function Košarica() {
                         required
                       />
                       <Form.Control.Feedback type="invalid">
-                        Your phone number
+                        Unesite važeći broj telefona
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
@@ -246,13 +244,13 @@ export default function Košarica() {
                       controlId="validationCustom03"
                       className="w-25"
                     >
-                      <Form.Label>City</Form.Label>
+                      <Form.Label>Grad</Form.Label>
                       <Form.Control type="text" placeholder="City"
                       value={userData.city}
                       onChange={(e) => setUserData({...userData, city: e.target.value})}
                        required />
                       <Form.Control.Feedback type="invalid">
-                        Please provide a valid city.
+                        Unesite važeći grad
                       </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group
@@ -261,13 +259,13 @@ export default function Košarica() {
                       controlId="validationCustom04"
                       className="w-25"
                     >
-                      <Form.Label>State</Form.Label>
+                      <Form.Label>Županija</Form.Label>
                       <Form.Control type="text" placeholder="State"
                       value={userData.state}
                       onChange={(e) => setUserData({...userData, state: e.target.value})}
                        required />
                       <Form.Control.Feedback type="invalid">
-                        Please provide a valid state.
+                        Unesite važeću Županiju
                       </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group
@@ -276,13 +274,13 @@ export default function Košarica() {
                       controlId="validationCustom05"
                       className="w-25"
                     >
-                      <Form.Label>Zip</Form.Label>
+                      <Form.Label>Poštanski broj</Form.Label>
                       <Form.Control type="text" placeholder="Zip"
                       value={userData.zip}
                       onChange={(e) => setUserData({...userData, zip: e.target.value})}
                       required />
                       <Form.Control.Feedback type="invalid">
-                        Please provide a valid zip.
+                        Unesite važeči poštanski broj
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
@@ -303,14 +301,14 @@ export default function Košarica() {
                     style={{ backgroundColor: "#F28F8F" }}
                     onClick={handleClose}
                   >
-                    Close
+                    Zatvori
                   </button>
                   <button
                     className="position-absolute m-4 w-25 rounded-5 bottom-0 end-0 green-button"
                     onClick={handleSubmit}
                     type="submit"
                   >
-                    Submit
+                    U košaricu
                   </button>
                 </Form>
               </div>
