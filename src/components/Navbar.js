@@ -29,14 +29,12 @@ export default function NavigationBar() {
                         <Nav.Link as={Link} to="/ONama">O nama</Nav.Link>
                         <Nav.Link as={Link} to="/Kontakt">Kontakt</Nav.Link>
                         <Nav.Link as={Link} to="/Ponuda">Ponuda</Nav.Link>
-                        
-                    </Nav>
-                    <Nav>
-                        <div className="position-relative">
-                            <img src="shopping-cart.png" onClick={() => navigate("/Kosarica")} alt="cart" />
+                        <Nav.Link as={Link} to="/Kosarica" className=''>
+                            <img src="shopping-cart.png" alt="cart" />
                             <span className="cart-icon">{quantity}</span>
-                        </div>
+                    </Nav.Link>
                     </Nav>
+                   
                 </Navbar.Collapse>
             </Container>
         </Navbar>

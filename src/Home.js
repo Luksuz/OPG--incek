@@ -27,8 +27,8 @@ function Home() {
                 OPG Šincek: Gdje sunce susreće zemlju, a plodovi prirode donose osvježenje ljeta.
               </p>
             </Col>
-            <Col md={6} className="">
-              <Button className="mt-3 green-button" href="/ONama">
+            <Col md={6} className="d-flex">
+              <Button className="mt-3 green-button  text-center" href="/ONama">
                 Saznajte više
               </Button>
             </Col>

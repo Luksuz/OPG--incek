@@ -31,8 +31,8 @@ export default function BlankCard() {
     uploadImage(
       imageData.image,
       imageData.name,
-      imageData.description,
       imageData.price,
+      imageData.description,
       localStorage.getItem("sincek_token")
     );
     setShow(false);

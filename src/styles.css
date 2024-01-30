@@ -1,6 +1,7 @@
 .green-button{
     height: auto;
     width: 50%;
+    transform: translateX(-50%);
     background-color: #73F28F;
     transition: 0.5s;
     outline-color: #73F28F;
@@ -61,3 +62,6 @@
         }
 }
 
+.basket{
+    margin-left: 10%;
+}

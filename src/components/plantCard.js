@@ -53,7 +53,7 @@ export default function PlantCard({ imageId, imageUrl, name, price, description,
         <hr />
         <p className="card-text green-shadow">{description}</p>
         <hr />
-        <p className="card-text">{price}</p>
+        <p className="card-text">{`${price}€`}</p>
         {token && (
           <div className="d-flex">
             <button

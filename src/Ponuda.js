@@ -38,10 +38,10 @@ export default function Ponuda() {
             return (
               <Col
                 xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={3}
+                sm={5}
+                md={3}
+                lg={3}
+                xl={4}
                 className="mb-2 d-flex flex-column justify-content-center align-items-center"
                 key={plant.id}
               >
@@ -59,10 +59,10 @@ export default function Ponuda() {
           {token &&
           <Col
           xs={12}
-          sm={6}
-          md={4}
-          lg={4}
-          xl={3}
+          sm={5}
+          md={3}
+          lg={3}
+          xl={4}
           className="mb-2 d-flex flex-column justify-content-center align-items-center"
           >
           <BlankCard />
