@@ -1,24 +1,9 @@
-import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
 import "../styles.css";
 
 export default function NavigationBar() {
-    const [quantity, setQuantity] = useState(0);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        let cartItems = 0;
-        let cart = JSON.parse(localStorage.getItem("cart"));
-        if (cart) {
-            cart.forEach((item) => {
-                cartItems += Number(item.quantity);
-            });
-        }
-        setQuantity(cartItems);
-    }, []);
-
 
     return (
         <Navbar collapseOnSelect expand="md" className="shadow sticky-top mb-5" style={{background: "#73F28F"}}>
