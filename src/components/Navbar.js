@@ -21,15 +21,15 @@ export default function NavigationBar() {
     return (
         <Navbar collapseOnSelect expand="md" className="shadow sticky-top mb-5" style={{background: "#73F28F"}}>
             <Container className='d-flex justify-content-between'>
-                <Navbar.Brand onClick={() => navigate("/")} className='fs-1'>OPG Šincek</Navbar.Brand>
+                <Navbar.Brand onClick={() => navigate("/")} className='fs-1 me-5'>OPG Šincek</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
+                <Navbar.Collapse id="responsive-navbar-nav" className='ms-5'>
                     <Nav className="me-auto d-flex align-items-end fs-5">
                         <Nav.Link as={Link} to="/">Početna</Nav.Link>
                         <Nav.Link as={Link} to="/ONama">O nama</Nav.Link>
                         <Nav.Link as={Link} to="/Kontakt">Kontakt</Nav.Link>
                         <Nav.Link as={Link} to="/Ponuda">Ponuda</Nav.Link>
-                        <Nav.Link as={Link} to="/Kosarica" className=''>
+                        <Nav.Link as={Link} to="/Kosarica" className='ms-5'>
                             <img src="shopping-cart.png" alt="cart" />
                             <span className="cart-icon">{quantity}</span>
                     </Nav.Link>

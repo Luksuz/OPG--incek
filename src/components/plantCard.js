@@ -68,21 +68,20 @@ export default function PlantCard({ imageId, imageUrl, name, price, description,
 
       {/* Modal */}
       <Modal show={show} onHide={handleClose} className="modal-xl">
-        <Modal.Body className="p-0">
-          <div className="d-flex flex-row flex-md-col">
-            <div className="row justify-content-center align-items-center me-3">
+        <Modal.Body className="p-5">
+          <Row>
+            <Col md={5}>
               <img
                 src={"data:image/webp;base64," + imageUrl}
                 alt={name}
-                className="img-fluid"
+                className="img-fluid w-100"
               />
-            </div>
-            <div className="mt-4">
-              <h5 className="card-title">{name}</h5>
+            </Col>
+            <Col md={7}>
+              <h1 className="card-title mb-2">{name}</h1>
               {description}
               <hr />
-              <div className="d-flex">
-                <Form noValidate>
+                <Form className="d-flex flex-column w-100 " noValidate>
                   <Row className="mb-3 d-flex justify-content-between">
                     <Form.Group
                       as={Col}
@@ -90,10 +89,10 @@ export default function PlantCard({ imageId, imageUrl, name, price, description,
                       controlId="validationCustom03"
                       className="w-50"
                     >
-                      <Form.Label>Quantity</Form.Label>
+                      <Form.Label>Količina</Form.Label>
                       <Form.Control
                         type="text"
-                        placeholder="Quantity"
+                        placeholder="Količina"
                         value={quantity}
                         onChange={(e) => setQuantity(e.target.value)}
                         required
@@ -103,26 +102,26 @@ export default function PlantCard({ imageId, imageUrl, name, price, description,
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
-                  <div className="mb-3">
+                  <div className="d-flex justify-content-between w-100">
                     <button
-                      className="position-absolute m-4 w-25 rounded-5 bottom-0 start-0 green-button"
+                      className=" w-25 rounded-5"
                       style={{ backgroundColor: "#F28F8F" }}
                       onClick={handleClose}
                     >
-                      Close
+                      Zatvori
                     </button>
                     <button
-                      className="position-absolute m-4 w-25 rounded-5 bottom-0 end-0 green-button"
+                      className=" w-25 rounded-5"
                       onClick={addToCart}
                       type="submit"
+                      style={{ backgroundColor: "#73F28F" }}
                     >
-                      Submit
+                      U košaricu
                     </button>
                   </div>
                 </Form>
-              </div>
-            </div>
-          </div>
+            </Col>
+            </Row>
         </Modal.Body>
       </Modal>
     </motion.div>
