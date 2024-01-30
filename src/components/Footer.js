@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="row d-flex justify-content-center align-items-center">
             <div className="col-4 text-center">
             <h1 className="">Sadnice Šincek</h1>
-            <p>Copyright © OPG ŠIncek 2023  </p>      
+            <p>Copyright © Sadnice ŠIncek 2024  </p>      
             </div>
             <div className="col-4 text-center">
             <p>Kontakt</p>
